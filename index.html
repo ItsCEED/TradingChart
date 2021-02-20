@@ -7,16 +7,24 @@
       }
    </style>
    <!-- make sure its on whole screen -->
+
+<!-- URL -->
+
    <body>
    <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_7a506"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script type="text/javascript">
+   let params = new URLSearchParams(location.search);
+   let symbol = "DOGEBTC";
+   if (params.has('pair')) {
+  symbol = params.get('pair');
+}
   new TradingView.widget(
   {
   "autosize": true,
-  "symbol": "BINANCE:BNTBTC",
+  "symbol": "BINANCE:" + symbol,
   "interval": "1",
   "timezone": "exchange",
   "theme": "dark",
