@@ -1,10 +1,26 @@
 <html>
+
+<!-- make sure its on whole screen -->
 <style>
   html, body {
     margin: 0;
     height: 100%;
 }
   </style>
+<!-- make sure its on whole screen -->
+
+<!-- Grab URL Parameters for pairs -->
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+  </script>
+
+
 <body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -14,6 +30,7 @@
   <script type="text/javascript">
   new TradingView.widget(
   {
+  var pair = getUrlVars()["pair"];
   "autosize": true,
   "symbol": "BINANCE:DOGEBTC",
   "timezone": "exchange",
@@ -30,12 +47,16 @@
 }
   );
   </script>
+<!-- TradingView Widget END -->
+
+<!-- Remove copyright so it wont break the screen -->
 <script>
 document.querySelectorAll('.tradingview-widget-copyright').forEach(function(a){
 a.remove()
 })
   </script>
 </div>
-<!-- TradingView Widget END -->
+<!-- Remove copyright so it wont break the screen -->
+
 </body>
 </html>
