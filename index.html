@@ -1,12 +1,9 @@
 <html>
 
 <script>
-function removeElementsByClass(.tradingview-widget-copyright){
-    var elements = document.getElementsByClassName(.tradingview-widget-copyright);
-    while(elements.length > 0){
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
+document.querySelectorAll('.tradingview-widget-copyright').forEach(function(a){
+a.remove()
+})
   </script>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
